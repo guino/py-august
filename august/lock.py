@@ -38,6 +38,9 @@ class LockDetail(DeviceDetail):
         else:
             self._keypad_detail = None
 
+        if 'OfflineKeys' in data:
+            print ( data['OfflineKeys']['loaded'][0]['key'])
+
         self._battery_level = int(100 * data["battery"])
 
     @property
